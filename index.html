@@ -157,6 +157,10 @@
             text-align: center;
             padding: 8rem 5% 4rem;
             position: relative;
+            background: linear-gradient(rgba(10, 10, 15, 0.85), rgba(10, 10, 15, 0.9)), url('https://kimi-web-img.moonshot.cn/img/files.idyllic.app/7b2859f928a643792a681cf3c07a06d819e59fa4');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         .hero-content { max-width: 900px; }
@@ -366,12 +370,29 @@
             padding: 3rem;
             max-width: 1000px;
             margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .server-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(rgba(10, 10, 15, 0.3), var(--card)), url('https://kimi-web-img.moonshot.cn/img/red-rp.com/940094854ab97f08637dbe5e1b3361dc6a1bc4f7.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5;
         }
 
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            position: relative;
+            z-index: 1;
         }
 
         .info-item {
@@ -407,6 +428,21 @@
 
         .players-section {
             background: var(--darker);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .players-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(5, 5, 8, 0.9), rgba(5, 5, 8, 0.95)), url('https://kimi-web-img.moonshot.cn/img/files.libertycity.net/d9e681b4e56469dc401fa33316225a37f4cbe1bb.webp');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
         }
 
         .players-placeholder {
@@ -417,6 +453,8 @@
             border-radius: 20px;
             max-width: 600px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .players-placeholder i {
@@ -434,9 +472,29 @@
             color: var(--text-muted);
         }
 
+        .rules-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rules-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(10, 10, 15, 0.95), rgba(10, 10, 15, 0.98)), url('https://kimi-web-img.moonshot.cn/img/static.wikia.nocookie.net/047bc56ab0931942750f4d03c486f36a0feefa85');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+        }
+
         .rules-list {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .rule-item {
@@ -619,7 +677,56 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        .gallery-section {
+            background: var(--darker);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: all 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            padding: 2rem 1.5rem 1.5rem;
+            color: white;
+            font-weight: 700;
+        }
     </style>
+<base target="_blank">
 </head>
 <body>
     <div class="bg-animation"></div>
@@ -633,6 +740,7 @@
         <ul class="nav-links">
             <li><a href="#home">الرئيسية</a></li>
             <li><a href="#features">المميزات</a></li>
+            <li><a href="#gallery">الصور</a></li>
             <li><a href="#server">السيرفر</a></li>
             <li><a href="#players">اللاعبين</a></li>
             <li><a href="#rules">القوانين</a></li>
@@ -669,7 +777,7 @@
                     <i class="fas fa-play"></i>
                     انضم للسيرفر
                 </a>
-                <a href="#" class="btn btn-secondary">
+                <a href="https://discord.gg/Pa9DXcV23" class="btn btn-secondary" target="_blank">
                     <i class="fab fa-discord"></i>
                     ديسكورد
                 </a>
@@ -712,6 +820,39 @@
                 <div class="feature-icon"><i class="fas fa-trophy"></i></div>
                 <h3>فعاليات أسبوعية</h3>
                 <p>شارك في الفعاليات والمسابقات الأسبوعية واربح جوائز قيمة</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <div class="section-title fade-in">
+            <h2>صور <span>من اللعبة</span></h2>
+            <p>لمحات من الحياة الواقعية في سيرفرنا</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item fade-in">
+                <img src="https://kimi-web-img.moonshot.cn/img/files.idyllic.app/7b2859f928a643792a681cf3c07a06d819e59fa4" alt="كازينو">
+                <div class="gallery-caption">كازينو فاخر</div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://kimi-web-img.moonshot.cn/img/files.libertycity.net/d9e681b4e56469dc401fa33316225a37f4cbe1bb.webp" alt="وسط المدينة">
+                <div class="gallery-caption">وسط المدينة ليلاً</div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://kimi-web-img.moonshot.cn/img/static.wikia.nocookie.net/047bc56ab0931942750f4d03c486f36a0feefa85" alt="قسم الشرطة">
+                <div class="gallery-caption">قسم الشرطة</div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://kimi-web-img.moonshot.cn/img/red-rp.com/940094854ab97f08637dbe5e1b3361dc6a1bc4f7.png" alt="شارع المدينة">
+                <div class="gallery-caption">حياة الشارع</div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://kimi-web-img.moonshot.cn/img/files.idyllic.app/c5be471f5892ec1b7942c7d58e672e2712c4d264" alt="كازينو داخلي">
+                <div class="gallery-caption">داخل الكازينو</div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://kimi-web-img.moonshot.cn/img/static.wikia.nocookie.net/ac76c3ad41f4f4ef609d3836be551a12899b5704" alt="أبراج المدينة">
+                <div class="gallery-caption">أبراج المدينة</div>
             </div>
         </div>
     </section>
@@ -781,7 +922,7 @@
         </div>
     </section>
 
-    <section id="rules">
+    <section id="rules" class="rules-section">
         <div class="section-title fade-in">
             <h2>قوانين <span>السيرفر</span></h2>
             <p>يرجى الالتزام بالقوانين التالية لضمان تجربة ممتعة للجميع</p>
@@ -852,7 +993,7 @@
             </div>
             <div class="staff-card fade-in">
                 <div class="staff-avatar"><i class="fas fa-gavel"></i></div>
-                <h3>قريباً</h3>
+                <h3>Mohamed123</h3>
                 <span class="staff-role role-mod">مشرف</span>
                 <p>مسؤول عن تطبيق القوانين ومساعدة اللاعبين</p>
             </div>
@@ -865,7 +1006,7 @@
             <p>انضم لمجتمعنا على منصات التواصل الاجتماعي</p>
         </div>
         <div class="social-links">
-            <a href="#" class="social-link discord"><i class="fab fa-discord"></i></a>
+            <a href="https://discord.gg/Pa9DXcV23" class="social-link discord" target="_blank"><i class="fab fa-discord"></i></a>
             <a href="#" class="social-link youtube"><i class="fab fa-youtube"></i></a>
             <a href="#" class="social-link tiktok"><i class="fab fa-tiktok"></i></a>
             <a href="#" class="social-link instagram"><i class="fab fa-instagram"></i></a>
