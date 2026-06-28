@@ -10,7 +10,7 @@
     <meta property="og:url" content="https://arab-roleplay.github.io/Arab-Roll/">
     <meta property="og:title" content="عرب رول بلاي - أفضل سيرفر MTA Roleplay">
     <meta property="og:description" content="انضم إلى تجربة لعب فريدة مع سيرفر عرب رول بلاي. عالم مفتوح، سيارات فريدة، وظائف متنوعة، ومجتمع رائع ينتظرك!">
-    <meta property="og:image" content="https://arab-roleplay.github.io/Arab-Roll/og-image.png">
+    <meta property="og:image" content="https://arab-roleplay.github.io/Arab-Roll/preview.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="ar_AR">
@@ -20,7 +20,7 @@
     <meta name="twitter:url" content="https://arab-roleplay.github.io/Arab-Roll/">
     <meta name="twitter:title" content="عرب رول بلاي - أفضل سيرفر MTA Roleplay">
     <meta name="twitter:description" content="انضم إلى تجربة لعب فريدة مع سيرفر عرب رول بلاي. عالم مفتوح، سيارات فريدة، وظائف متنوعة!">
-    <meta name="twitter:image" content="https://arab-roleplay.github.io/Arab-Roll/og-image.png">
+    <meta name="twitter:image" content="https://arab-roleplay.github.io/Arab-Roll/preview.png">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://arab-roleplay.github.io/Arab-Roll/rp-logo.png">
@@ -41,6 +41,9 @@
             --border: #1f1f2e;
             --success: #00ff88;
             --warning: #ffaa00;
+            --gold: #ffd700;
+            --silver: #c0c0c0;
+            --bronze: #cd7f32;
         }
 
         * {
@@ -178,7 +181,7 @@
             text-align: center;
             padding: 8rem 5% 4rem;
             position: relative;
-            background: linear-gradient(rgba(10, 10, 15, 0.85), rgba(10, 10, 15, 0.9)), url('https://kimi-web-img.moonshot.cn/img/files.idyllic.app/7b2859f928a643792a681cf3c07a06d819e59fa4');
+            background: linear-gradient(rgba(10, 10, 15, 0.85), rgba(10, 10, 15, 0.9)), url('https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1920');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -324,6 +327,133 @@
             color: var(--primary);
         }
 
+        /* VIP Store Section */
+        .vip-section {
+            background: var(--darker);
+        }
+
+        .vip-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .vip-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 25px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vip-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .vip-card:hover::before { transform: scaleX(1); }
+        .vip-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .vip-card.bronze::before { background: linear-gradient(90deg, var(--bronze), #8B4513); }
+        .vip-card.silver::before { background: linear-gradient(90deg, var(--silver), #A0A0A0); }
+        .vip-card.gold::before { background: linear-gradient(90deg, var(--gold), #FFA500); }
+        .vip-card.platinum::before { background: linear-gradient(90deg, var(--primary), var(--accent)); }
+
+        .vip-card.bronze:hover { border-color: var(--bronze); }
+        .vip-card.silver:hover { border-color: var(--silver); }
+        .vip-card.gold:hover { border-color: var(--gold); }
+        .vip-card.platinum:hover { border-color: var(--primary); }
+
+        .vip-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+            color: white;
+        }
+
+        .bronze .vip-icon { background: linear-gradient(135deg, var(--bronze), #8B4513); }
+        .silver .vip-icon { background: linear-gradient(135deg, var(--silver), #A0A0A0); }
+        .gold .vip-icon { background: linear-gradient(135deg, var(--gold), #FFA500); }
+        .platinum .vip-icon { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+
+        .vip-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .vip-card .price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin: 1rem 0;
+            color: var(--text);
+        }
+
+        .vip-card .price span {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        .vip-features {
+            list-style: none;
+            text-align: right;
+            margin: 1.5rem 0;
+            padding: 0;
+        }
+
+        .vip-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .vip-features li:last-child { border-bottom: none; }
+        .vip-features li i { color: var(--success); }
+
+        .vip-btn {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: white;
+            margin-top: 1rem;
+        }
+
+        .bronze .vip-btn { background: linear-gradient(135deg, var(--bronze), #8B4513); }
+        .silver .vip-btn { background: linear-gradient(135deg, var(--silver), #A0A0A0); }
+        .gold .vip-btn { background: linear-gradient(135deg, var(--gold), #FFA500); }
+        .platinum .vip-btn { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+
+        .vip-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -391,29 +521,12 @@
             padding: 3rem;
             max-width: 1000px;
             margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .server-info::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(rgba(10, 10, 15, 0.3), var(--card)), url('https://kimi-web-img.moonshot.cn/img/red-rp.com/940094854ab97f08637dbe5e1b3361dc6a1bc4f7.png');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.5;
         }
 
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            position: relative;
-            z-index: 1;
         }
 
         .info-item {
@@ -449,21 +562,6 @@
 
         .players-section {
             background: var(--darker);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .players-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(5, 5, 8, 0.9), rgba(5, 5, 8, 0.95)), url('https://kimi-web-img.moonshot.cn/img/files.libertycity.net/d9e681b4e56469dc401fa33316225a37f4cbe1bb.webp');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.3;
         }
 
         .players-placeholder {
@@ -474,8 +572,6 @@
             border-radius: 20px;
             max-width: 600px;
             margin: 0 auto;
-            position: relative;
-            z-index: 1;
         }
 
         .players-placeholder i {
@@ -498,24 +594,9 @@
             overflow: hidden;
         }
 
-        .rules-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(10, 10, 15, 0.95), rgba(10, 10, 15, 0.98)), url('https://kimi-web-img.moonshot.cn/img/static.wikia.nocookie.net/047bc56ab0931942750f4d03c486f36a0feefa85');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.2;
-        }
-
         .rules-list {
             max-width: 800px;
             margin: 0 auto;
-            position: relative;
-            z-index: 1;
         }
 
         .rule-item {
@@ -664,11 +745,6 @@
             color: var(--text-muted);
         }
 
-        footer a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -698,54 +774,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-
-        .gallery-section {
-            background: var(--darker);
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .gallery-item {
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: all 0.3s;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
-            padding: 2rem 1.5rem 1.5rem;
-            color: white;
-            font-weight: 700;
-        }
     </style>
 <base target="_blank">
 </head>
@@ -761,7 +789,7 @@
         <ul class="nav-links">
             <li><a href="#home">الرئيسية</a></li>
             <li><a href="#features">المميزات</a></li>
-            <li><a href="#gallery">الصور</a></li>
+            <li><a href="#vip">المتجر</a></li>
             <li><a href="#server">السيرفر</a></li>
             <li><a href="#players">اللاعبين</a></li>
             <li><a href="#rules">القوانين</a></li>
@@ -845,35 +873,73 @@
         </div>
     </section>
 
-    <section id="gallery" class="gallery-section">
+    <!-- VIP Store Section -->
+    <section id="vip" class="vip-section">
         <div class="section-title fade-in">
-            <h2>صور <span>من اللعبة</span></h2>
-            <p>لمحات من الحياة الواقعية في سيرفرنا</p>
+            <h2>متجر <span>VIP</span></h2>
+            <p>اختر الباقة المناسبة لك واستمتع بمميزات حصرية</p>
         </div>
-        <div class="gallery-grid">
-            <div class="gallery-item fade-in">
-                <img src="https://kimi-web-img.moonshot.cn/img/files.idyllic.app/7b2859f928a643792a681cf3c07a06d819e59fa4" alt="كازينو">
-                <div class="gallery-caption">كازينو فاخر</div>
+        <div class="vip-grid">
+            <!-- Bronze -->
+            <div class="vip-card bronze fade-in">
+                <div class="vip-icon"><i class="fas fa-medal"></i></div>
+                <h3>برونز</h3>
+                <div class="price">-- <span>جنيه</span></div>
+                <ul class="vip-features">
+                    <li><i class="fas fa-check"></i> سيارة VIP</li>
+                    <li><i class="fas fa-check"></i> 100,000 فلوس</li>
+                    <li><i class="fas fa-check"></i> لقب خاص في الشات</li>
+                    <li><i class="fas fa-check"></i> وصول للأماكن الخاصة</li>
+                </ul>
+                <button class="vip-btn" onclick="buyVIP('bronze')">اشتري الآن</button>
             </div>
-            <div class="gallery-item fade-in">
-                <img src="https://kimi-web-img.moonshot.cn/img/files.libertycity.net/d9e681b4e56469dc401fa33316225a37f4cbe1bb.webp" alt="وسط المدينة">
-                <div class="gallery-caption">وسط المدينة ليلاً</div>
+
+            <!-- Silver -->
+            <div class="vip-card silver fade-in">
+                <div class="vip-icon"><i class="fas fa-gem"></i></div>
+                <h3>فضة</h3>
+                <div class="price">-- <span>جنيه</span></div>
+                <ul class="vip-features">
+                    <li><i class="fas fa-check"></i> 3 سيارات VIP</li>
+                    <li><i class="fas fa-check"></i> 500,000 فلوس</li>
+                    <li><i class="fas fa-check"></i> لقب VIP في الشات</li>
+                    <li><i class="fas fa-check"></i> منزل خاص</li>
+                    <li><i class="fas fa-check"></i> أولوية في الدخول</li>
+                </ul>
+                <button class="vip-btn" onclick="buyVIP('silver')">اشتري الآن</button>
             </div>
-            <div class="gallery-item fade-in">
-                <img src="https://kimi-web-img.moonshot.cn/img/static.wikia.nocookie.net/047bc56ab0931942750f4d03c486f36a0feefa85" alt="قسم الشرطة">
-                <div class="gallery-caption">قسم الشرطة</div>
+
+            <!-- Gold -->
+            <div class="vip-card gold fade-in">
+                <div class="vip-icon"><i class="fas fa-crown"></i></div>
+                <h3>ذهب</h3>
+                <div class="price">-- <span>جنيه</span></div>
+                <ul class="vip-features">
+                    <li><i class="fas fa-check"></i> 5 سيارات VIP نادرة</li>
+                    <li><i class="fas fa-check"></i> 1,000,000 فلوس</li>
+                    <li><i class="fas fa-check"></i> لقب Gold في الشات</li>
+                    <li><i class="fas fa-check"></i> قصر/فيلا خاصة</li>
+                    <li><i class="fas fa-check"></i> أولوية قصوى</li>
+                    <li><i class="fas fa-check"></i> دعم فني 24/7</li>
+                </ul>
+                <button class="vip-btn" onclick="buyVIP('gold')">اشتري الآن</button>
             </div>
-            <div class="gallery-item fade-in">
-                <img src="https://kimi-web-img.moonshot.cn/img/red-rp.com/940094854ab97f08637dbe5e1b3361dc6a1bc4f7.png" alt="شارع المدينة">
-                <div class="gallery-caption">حياة الشارع</div>
-            </div>
-            <div class="gallery-item fade-in">
-                <img src="https://kimi-web-img.moonshot.cn/img/files.idyllic.app/c5be471f5892ec1b7942c7d58e672e2712c4d264" alt="كازينو داخلي">
-                <div class="gallery-caption">داخل الكازينو</div>
-            </div>
-            <div class="gallery-item fade-in">
-                <img src="https://kimi-web-img.moonshot.cn/img/static.wikia.nocookie.net/ac76c3ad41f4f4ef609d3836be551a12899b5704" alt="أبراج المدينة">
-                <div class="gallery-caption">أبراج المدينة</div>
+
+            <!-- Platinum -->
+            <div class="vip-card platinum fade-in">
+                <div class="vip-icon"><i class="fas fa-star"></i></div>
+                <h3>بلاتينيوم</h3>
+                <div class="price">-- <span>جنيه</span></div>
+                <ul class="vip-features">
+                    <li><i class="fas fa-check"></i> 10 سيارات VIP نادرة</li>
+                    <li><i class="fas fa-check"></i> 5,000,000 فلوس</li>
+                    <li><i class="fas fa-check"></i> لقب Platinum في الشات</li>
+                    <li><i class="fas fa-check"></i> قصر فاخر + جراج خاص</li>
+                    <li><i class="fas fa-check"></i> أولوية مطلقة</li>
+                    <li><i class="fas fa-check"></i> دعم فني 24/7</li>
+                    <li><i class="fas fa-check"></i> مسموح بـ Custom Skin</li>
+                </ul>
+                <button class="vip-btn" onclick="buyVIP('platinum')">اشتري الآن</button>
             </div>
         </div>
     </section>
@@ -1077,6 +1143,10 @@
 
         function copyIP() {
             alert('عنوان السيرفر سيتم الإعلان عنه قريباً!');
+        }
+
+        function buyVIP(plan) {
+            alert('سيتم فتح المتجر قريباً! الباقة المختارة: ' + plan);
         }
 
         window.addEventListener('scroll', () => {
